@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RubberDuck Bot • Next-Gen Discord Companion</title>
-  <meta name="description" content="Vibráló, modern, megbízható Discord bot: XP ranglétra, virtuális coin gazdaság, perzisztens emlékeztetők és közösségi eszközök.">
+  <meta name="description" content="Kétnyelvű, modern Discord bot: XP ranglétra, virtuális coin gazdaság, perzisztens emlékeztetők, szórakoztató minijátékok és közösségi eszközök.">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -55,22 +55,11 @@
   </script>
 
   <style>
-    /* Custom Scrollbar */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #0B0D17;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #232942;
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #FBBF24;
-    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0B0D17; }
+    ::-webkit-scrollbar-thumb { background: #232942; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FBBF24; }
 
-    /* Ambient aura canvas */
     .bg-mesh {
       background-color: #0B0D17;
       background-image: 
@@ -81,16 +70,12 @@
       background-attachment: fixed;
     }
 
-    /* Shimmer animation */
     @keyframes pulseGlow {
       0%, 100% { opacity: 0.6; transform: scale(1); }
       50% { opacity: 0.9; transform: scale(1.03); }
     }
-    .animate-pulse-glow {
-      animation: pulseGlow 6s ease-in-out infinite;
-    }
+    .animate-pulse-glow { animation: pulseGlow 6s ease-in-out infinite; }
 
-    /* Glass card aesthetic */
     .glass-bento {
       background: rgba(18, 23, 44, 0.68);
       backdrop-filter: blur(14px);
@@ -104,19 +89,17 @@
       box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.5), 0 0 24px -4px rgba(251, 191, 36, 0.15);
     }
 
-    /* Discord message bubble mockup */
-    .discord-chat-bg {
-      background: #313338;
-    }
+    .discord-chat-bg { background: #313338; }
   </style>
 </head>
 <body class="bg-mesh text-slate-200 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-duck selection:text-slate-950 overflow-x-hidden">
 
+  <!-- HEADER -->
   <header class="sticky top-0 z-40 backdrop-blur-xl bg-surface-base/80 border-b border-white/5 transition-all">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo -->
-      <a href="#hero" class="flex items-center gap-3.5 group">
+      <a href="index.html" class="flex items-center gap-3.5 group">
         <div class="relative w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-amberGlow to-brand-duck p-0.5 shadow-glow-amber transition-transform duration-300 group-hover:scale-105">
           <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center text-xl">
             🦆
@@ -136,8 +119,8 @@
         <a href="#features" class="hover:text-brand-duck transition-colors" data-i18n="nav.features">Képességek</a>
         <a href="#commands" class="hover:text-brand-duck transition-colors" data-i18n="nav.commands">Parancsközpont</a>
         <a href="#security" class="hover:text-brand-duck transition-colors" data-i18n="nav.security">Biztonság & Védelem</a>
-        <button onclick="openModal('privacy')" class="hover:text-brand-duck transition-colors" data-i18n="nav.privacy">Adatvédelem</button>
-        <button onclick="openModal('terms')" class="hover:text-brand-duck transition-colors" data-i18n="nav.terms">Feltételek</button>
+        <a href="privacy.html" class="hover:text-brand-duck transition-colors" data-i18n="nav.privacy">Adatvédelem</a>
+        <a href="terms.html" class="hover:text-brand-duck transition-colors" data-i18n="nav.terms">Feltételek</a>
       </nav>
 
       <!-- Language & CTA Actions -->
@@ -150,7 +133,7 @@
         </button>
 
         <!-- Discord Invite Button -->
-        <a href="https://discord.com/oauth2/authorize?client_id=1460395350410760456&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider text-slate-950 bg-gradient-to-r from-brand-duck via-amber-400 to-amber-500 hover:brightness-110 shadow-glow-amber transition-all transform hover:-translate-y-0.5">
+        <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2.5 px-5 py-2.5 rounded-xl font-semibold text-xs uppercase tracking-wider text-slate-950 bg-gradient-to-r from-brand-duck via-amber-400 to-amber-500 hover:brightness-110 shadow-glow-amber transition-all transform hover:-translate-y-0.5">
           <i class="fa-brands fa-discord text-sm"></i>
           <span data-i18n="btn.invite">Meghívás</span>
         </a>
@@ -168,9 +151,9 @@
       <a href="#features" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.features">Képességek</a>
       <a href="#commands" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.commands">Parancsközpont</a>
       <a href="#security" onclick="toggleMobileNav()" class="block py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.security">Biztonság & Védelem</a>
-      <button onclick="openModal('privacy'); toggleMobileNav()" class="block w-full text-left py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.privacy">Adatvédelem</button>
-      <button onclick="openModal('terms'); toggleMobileNav()" class="block w-full text-left py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.terms">Feltételek</button>
-      <a href="https://discord.com/oauth2/authorize?client_id=1460395350410760456&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-brand-duck to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider mt-4">
+      <a href="privacy.html" class="block py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.privacy">Adatvédelem (Privacy)</a>
+      <a href="terms.html" class="block py-2 text-slate-300 hover:text-brand-duck font-medium" data-i18n="nav.terms">Feltételek (Terms)</a>
+      <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-gradient-to-r from-brand-duck to-amber-500 text-slate-950 font-bold text-xs uppercase tracking-wider mt-4">
         <i class="fa-brands fa-discord"></i>
         <span data-i18n="btn.invite">Meghívás a szerverre</span>
       </a>
@@ -181,14 +164,13 @@
 
     <!-- HERO SECTION -->
     <section id="hero" class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
-      <!-- Glow Orbs in background -->
       <div class="absolute -top-24 left-1/4 w-96 h-96 bg-brand-duck/20 rounded-full blur-[120px] pointer-events-none animate-pulse-glow"></div>
       <div class="absolute top-1/3 -right-20 w-96 h-96 bg-brand-violet/25 rounded-full blur-[130px] pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          <!-- Hero Left Column: Punchy Headline & Value Prop -->
+          <!-- Left Column -->
           <div class="lg:col-span-6 space-y-6 text-center lg:text-left">
             <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-brand-duck/30 bg-brand-duck/10 text-brand-duck text-xs font-semibold shadow-inner">
               <span class="w-2 h-2 rounded-full bg-brand-duck animate-ping"></span>
@@ -204,9 +186,9 @@
               Interaktív ranglétra, felvehető napi érmék, bolt rangot adó kitűzőkkel, megbízható időzítők és valós idejű szórakozás. Minden funkció azonnal, zökkenőmentesen és biztonságosan elérhető a szervereden.
             </p>
 
-            <!-- Action Buttons -->
+            <!-- Buttons -->
             <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <a href="https://discord.com/oauth2/authorize?client_id=1460395350410760456&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-brand-duck via-amber-400 to-amber-500 text-slate-950 font-bold text-sm tracking-wide shadow-glow-amber hover:shadow-amber-500/40 hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
+              <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-7 py-3.5 rounded-2xl bg-gradient-to-r from-brand-duck via-amber-400 to-amber-500 text-slate-950 font-bold text-sm tracking-wide shadow-glow-amber hover:shadow-amber-500/40 hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
                 <i class="fa-brands fa-discord text-base"></i>
                 <span data-i18n="hero.ctaPrimary">Bot meghívása most</span>
               </a>
@@ -217,7 +199,7 @@
               </a>
             </div>
 
-            <!-- Trust Bar / Key Highlights -->
+            <!-- Highlights -->
             <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-left max-w-lg mx-auto lg:mx-0">
               <div>
                 <div class="text-xl sm:text-2xl font-extrabold text-white">35+</div>
@@ -235,14 +217,12 @@
 
           </div>
 
-          <!-- Hero Right Column: Discord Interactive Widget Mockup -->
+          <!-- Right Column: Discord Interactive Widget Mockup -->
           <div class="lg:col-span-6 relative">
             <div class="relative mx-auto max-w-lg rounded-3xl p-1 bg-gradient-to-b from-brand-duck/40 via-brand-violet/30 to-brand-cyan/20 shadow-2xl shadow-black/80">
               
               <!-- Discord Window Mockup -->
               <div class="discord-chat-bg rounded-[22px] overflow-hidden border border-white/10 font-sans shadow-inner">
-                
-                <!-- Channel Top Bar -->
                 <div class="px-4 py-3 bg-[#2B2D31] border-b border-[#1F2023] flex items-center justify-between">
                   <div class="flex items-center gap-2.5">
                     <span class="text-slate-400 text-lg">#</span>
@@ -255,10 +235,8 @@
                   </div>
                 </div>
 
-                <!-- Chat Body with interactive messages -->
                 <div class="p-4 space-y-4 text-xs">
-                  
-                  <!-- Message 1: User Slash invocation -->
+                  <!-- User command -->
                   <div class="flex items-start gap-3">
                     <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-[11px] flex-shrink-0">
                       JD
@@ -274,7 +252,7 @@
                     </div>
                   </div>
 
-                  <!-- Bot Response 1: Rich Embed -->
+                  <!-- Bot Response -->
                   <div class="flex items-start gap-3 pl-2">
                     <div class="w-8 h-8 rounded-full bg-slate-900 border border-brand-duck flex items-center justify-center text-sm flex-shrink-0 shadow-glow-amber">
                       🦆
@@ -286,7 +264,6 @@
                         <span class="text-[10px] text-slate-400">ma 14:32</span>
                       </div>
 
-                      <!-- Embed Card -->
                       <div class="mt-2 rounded-xl bg-[#2B2D31] border-l-4 border-brand-duck p-3.5 space-y-2 shadow-md">
                         <div class="font-bold text-white flex items-center gap-1.5">
                           <span>🎁 Napi jutalom felvéve!</span>
@@ -309,11 +286,10 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
                   </div>
 
-                  <!-- Bot Interactive Buttons Mockup -->
+                  <!-- Mock Buttons -->
                   <div class="pl-11 flex flex-wrap gap-2 pt-1">
                     <button onclick="triggerDemoInteraction('profile')" class="px-3 py-1.5 rounded-lg bg-[#3B3E45] hover:bg-[#474A53] text-white font-medium text-[11px] flex items-center gap-1.5 transition-colors">
                       <i class="fa-solid fa-id-badge text-brand-duck"></i>
@@ -325,15 +301,10 @@
                     </button>
                   </div>
 
-                  <!-- Interactive feedback bubble -->
-                  <div id="demoInteractionBox" class="pl-11 text-[11px] text-amber-300 font-mono italic hidden">
-                    <!-- Populated dynamically via JS -->
-                  </div>
-
+                  <div id="demoInteractionBox" class="pl-11 text-[11px] text-amber-300 font-mono italic hidden"></div>
                 </div>
 
               </div>
-
             </div>
           </div>
 
@@ -341,7 +312,7 @@
       </div>
     </section>
 
-    <!-- BENTO GRID FEATURES SECTION -->
+    <!-- BENTO GRID FEATURES -->
     <section id="features" class="py-20 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -358,10 +329,9 @@
           </p>
         </div>
 
-        <!-- Asymmetric Bento Grid Layout -->
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           
-          <!-- Bento 1: XP & Progression (Large 2-column card) -->
+          <!-- Bento 1: XP -->
           <div class="md:col-span-2 glass-bento rounded-3xl p-7 relative overflow-hidden flex flex-col justify-between group">
             <div class="absolute -right-12 -top-12 w-48 h-48 bg-brand-duck/15 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-duck/25 transition-all"></div>
             
@@ -379,7 +349,6 @@
               </p>
             </div>
 
-            <!-- Mini Visual Mockup inside card -->
             <div class="mt-6 p-4 rounded-2xl bg-black/40 border border-white/5 space-y-2">
               <div class="flex items-center justify-between text-xs">
                 <span class="font-bold text-white">⭐ Szint 14</span>
@@ -395,7 +364,7 @@
             </div>
           </div>
 
-          <!-- Bento 2: Economy & Roles (1-column card) -->
+          <!-- Bento 2: Economy -->
           <div class="glass-bento rounded-3xl p-7 flex flex-col justify-between group">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-brand-amberGlow/10 border border-brand-amberGlow/30 flex items-center justify-center text-brand-amberGlow text-xl mb-5">
@@ -413,7 +382,7 @@
             </div>
           </div>
 
-          <!-- Bento 3: Persistent Reminders & Tasks (1-column card) -->
+          <!-- Bento 3: Time -->
           <div class="glass-bento rounded-3xl p-7 flex flex-col justify-between group">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan text-xl mb-5">
@@ -431,7 +400,7 @@
             </div>
           </div>
 
-          <!-- Bento 4: Interactive Polls & Announcements (1-column card) -->
+          <!-- Bento 4: Polls -->
           <div class="glass-bento rounded-3xl p-7 flex flex-col justify-between group">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-brand-violet/10 border border-brand-violet/30 flex items-center justify-center text-brand-violet text-xl mb-5">
@@ -449,7 +418,7 @@
             </div>
           </div>
 
-          <!-- Bento 5: Games & Entertainment (Large 2-column card) -->
+          <!-- Bento 5: Games -->
           <div class="md:col-span-2 glass-bento rounded-3xl p-7 relative overflow-hidden flex flex-col justify-between group">
             <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-brand-violet/20 rounded-full blur-3xl pointer-events-none group-hover:bg-brand-violet/30 transition-all"></div>
 
@@ -475,7 +444,7 @@
             </div>
           </div>
 
-          <!-- Bento 6: Multilingual Switcher (1-column card) -->
+          <!-- Bento 6: Lang -->
           <div class="glass-bento rounded-3xl p-7 flex flex-col justify-between group">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-300 text-xl mb-5">
@@ -499,7 +468,7 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE COMMAND DECK SECTION -->
+    <!-- INTERACTIVE COMMAND DECK -->
     <section id="commands" class="py-20 relative bg-surface-base/60 border-y border-white/5">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -526,39 +495,31 @@
             <i class="fa-solid fa-layer-group"></i>
             <span data-i18n="cmd.catAll">Összes</span>
           </button>
-
           <button onclick="setCommandCategory('economy')" class="cmd-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 transition-all flex items-center gap-2" data-cat="economy">
             <i class="fa-solid fa-coins text-brand-duck"></i>
             <span data-i18n="cmd.catEconomy">Gazdaság & XP</span>
           </button>
-
           <button onclick="setCommandCategory('productivity')" class="cmd-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 transition-all flex items-center gap-2" data-cat="productivity">
             <i class="fa-solid fa-list-check text-brand-cyan"></i>
             <span data-i18n="cmd.catProductivity">Produktivitás</span>
           </button>
-
           <button onclick="setCommandCategory('fun')" class="cmd-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 transition-all flex items-center gap-2" data-cat="fun">
             <i class="fa-solid fa-dice text-brand-emerald"></i>
             <span data-i18n="cmd.catFun">Szórakozás & Játék</span>
           </button>
-
           <button onclick="setCommandCategory('media')" class="cmd-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 transition-all flex items-center gap-2" data-cat="media">
             <i class="fa-solid fa-photo-film text-brand-violet"></i>
             <span data-i18n="cmd.catMedia">Média & Infó</span>
           </button>
-
           <button onclick="setCommandCategory('general')" class="cmd-pill px-4 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/5 transition-all flex items-center gap-2" data-cat="general">
             <i class="fa-solid fa-gear text-slate-400"></i>
             <span data-i18n="cmd.catGeneral">Általános</span>
           </button>
         </div>
 
-        <!-- Commands Grid Container -->
-        <div id="commandsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <!-- Populated by JavaScript -->
-        </div>
+        <!-- Commands Grid -->
+        <div id="commandsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
-        <!-- No Results Fallback -->
         <div id="noCommandsFound" class="hidden text-center py-16">
           <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center mx-auto text-slate-500 text-xl mb-3">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -570,13 +531,11 @@
       </div>
     </section>
 
-    <!-- SECURITY & PRIVACY PROMISES SECTION -->
+    <!-- SECURITY & PRIVACY PROMISES -->
     <section id="security" class="py-24 relative overflow-hidden">
-      <!-- Glow ambient -->
       <div class="absolute right-0 bottom-0 w-80 h-80 bg-brand-emerald/15 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        
         <div class="text-center max-w-3xl mx-auto mb-16">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-emerald/30 bg-brand-emerald/10 text-brand-emerald text-xs font-semibold uppercase tracking-wider mb-3">
             <i class="fa-solid fa-shield-halved"></i>
@@ -590,9 +549,7 @@
           </p>
         </div>
 
-        <!-- 4 Key Security Columns -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
           <div class="glass-bento rounded-2xl p-6 relative overflow-hidden">
             <div class="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/30 flex items-center justify-center text-brand-emerald mb-4">
               <i class="fa-solid fa-comment-slash"></i>
@@ -632,13 +589,12 @@
               Minden felhasználónak joga van a profiljához kötött virtuális adatok és emlékeztetők megtekintéséhez vagy azok azonnali végleges törléséhez.
             </p>
           </div>
-
         </div>
 
       </div>
     </section>
 
-    <!-- CTA INVITE BANNER -->
+    <!-- CTA BANNER -->
     <section class="py-16 relative">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="relative rounded-3xl p-8 sm:p-12 overflow-hidden bg-gradient-to-r from-amber-500/20 via-brand-violet/20 to-brand-cyan/20 border border-white/10 shadow-2xl text-center">
@@ -655,13 +611,13 @@
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="https://discord.com/oauth2/authorize?client_id=1460395350410760456&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-duck to-amber-500 text-slate-950 font-bold text-sm tracking-wide shadow-glow-amber hover:scale-105 transition-all flex items-center justify-center gap-2.5">
+            <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-brand-duck to-amber-500 text-slate-950 font-bold text-sm tracking-wide shadow-glow-amber hover:scale-105 transition-all flex items-center justify-center gap-2.5">
               <i class="fa-brands fa-discord text-base"></i>
               <span data-i18n="cta.btn">Meghívás egy kattintással</span>
             </a>
-            <button onclick="openModal('privacy')" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all" data-i18n="nav.privacy">
+            <a href="privacy.html" class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium text-sm transition-all" data-i18n="nav.privacy">
               Adatvédelmi Nyilatkozat
-            </button>
+            </a>
           </div>
 
         </div>
@@ -673,7 +629,6 @@
   <!-- FOOTER -->
   <footer class="border-t border-white/5 bg-slate-950/80 text-slate-400 text-xs py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-      
       <div class="flex items-center gap-3">
         <span class="text-lg">🦆</span>
         <div>
@@ -683,354 +638,55 @@
       </div>
 
       <div class="flex items-center gap-6 font-medium">
-        <a href="#hero" class="hover:text-white transition-colors" data-i18n="footer.home">Főoldal</a>
+        <a href="index.html" class="hover:text-white transition-colors" data-i18n="footer.home">Főoldal</a>
         <a href="#commands" class="hover:text-white transition-colors" data-i18n="nav.commands">Parancsok</a>
-        <button onclick="openModal('privacy')" class="hover:text-white transition-colors" data-i18n="nav.privacy">Adatvédelem</button>
-        <button onclick="openModal('terms')" class="hover:text-white transition-colors" data-i18n="nav.terms">Feltételek</button>
+        <a href="privacy.html" class="hover:text-white transition-colors" data-i18n="nav.privacy">Adatvédelem</a>
+        <a href="terms.html" class="hover:text-white transition-colors" data-i18n="nav.terms">Feltételek</a>
       </div>
-
     </div>
   </footer>
 
-  <!-- MODAL DIALOG CONTAINER (LEGAL POLICIES) -->
-  <div id="legalModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
-    <div class="relative w-full max-w-2xl max-h-[85vh] rounded-3xl bg-[#121629] border border-white/10 p-6 sm:p-8 flex flex-col shadow-2xl">
-      
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between pb-4 border-b border-white/10">
-        <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-xl bg-brand-duck/20 text-brand-duck flex items-center justify-center text-sm font-bold">
-            <i class="fa-solid fa-file-contract"></i>
-          </div>
-          <div>
-            <h3 id="modalTitle" class="text-lg font-bold text-white">Dokumentum</h3>
-            <span class="text-[11px] text-slate-400 font-mono" data-i18n="modal.compliance">Discord Developer Compliant</span>
-          </div>
-        </div>
-        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Modal Body (Scrollable) -->
-      <div id="modalContent" class="overflow-y-auto py-5 pr-2 space-y-4 text-xs text-slate-300 leading-relaxed font-sans">
-        <!-- Injected via JavaScript depending on language & selected tab -->
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="pt-4 border-t border-white/10 flex justify-end">
-        <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-brand-duck text-slate-950 font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all" data-i18n="modal.close">
-          Rendben / Bezárás
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- TOAST NOTIFICATION -->
+  <!-- TOAST -->
   <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-brand-duck/40 bg-slate-900/90 backdrop-blur-md text-white text-xs font-mono shadow-glow-amber">
     <i class="fa-solid fa-check text-brand-duck"></i>
     <span id="toastText">Vágólapra másolva!</span>
   </div>
 
   <script>
-    // ========================================================
-    // DATA DICTIONARY: Commands with syntax and descriptions
-    // ========================================================
     const COMMAND_REGISTRY = [
-      // Economy & Progression
-      {
-        name: "/daily",
-        category: "economy",
-        syntax: "/daily",
-        desc_hu: "Napi ingyenes érmék felvétele növekvő streak bónusszal.",
-        desc_en: "Claim free daily coins with an increasing streak multiplier.",
-        type: "Economy",
-        badge: "Daily"
-      },
-      {
-        name: "/balance",
-        category: "economy",
-        syntax: "/balance [@felhasználó]",
-        desc_hu: "Saját vagy másik tag coin egyenlegének lekérdezése.",
-        desc_en: "Check your own or another member's coin balance.",
-        type: "Economy",
-        badge: "Coins"
-      },
-      {
-        name: "/shop",
-        category: "economy",
-        syntax: "/shop",
-        desc_hu: "Kozmetikai bolt kitűzőkkel, címekkel és rangot adó badge-ekkel.",
-        desc_en: "Cosmetic catalog with titles, badges and role-granting perks.",
-        type: "Economy",
-        badge: "Store"
-      },
-      {
-        name: "/buy",
-        category: "economy",
-        syntax: "/buy item_key:<tárgy>",
-        desc_hu: "Shop termék megvásárlása coin egyenlegből.",
-        desc_en: "Purchase an item from the shop using your coin balance.",
-        type: "Economy",
-        badge: "Shop"
-      },
-      {
-        name: "/inventory",
-        category: "economy",
-        syntax: "/inventory [@felhasználó]",
-        desc_hu: "Megvásárolt címek és badge-ek listája.",
-        desc_en: "View owned cosmetic items, badges, and titles.",
-        type: "Economy",
-        badge: "Items"
-      },
-      {
-        name: "/equip",
-        category: "economy",
-        syntax: "/equip item_key:<tárgy>",
-        desc_hu: "Cím vagy kitűző felszerelése profilodra és neved mellé.",
-        desc_en: "Equip a cosmetic title or badge next to your server display name.",
-        type: "Economy",
-        badge: "Equip"
-      },
-      {
-        name: "/give",
-        category: "economy",
-        syntax: "/give member:@tag amount:<összeg>",
-        desc_hu: "Coin átutalása egy másik szervertagnak.",
-        desc_en: "Transfer coins to another server member securely.",
-        type: "Economy",
-        badge: "Transfer"
-      },
-      {
-        name: "/rank",
-        category: "economy",
-        syntax: "/rank [@tag]",
-        desc_hu: "XP szint, tapasztalati sáv és szerver helyezés.",
-        desc_en: "Inspect your current XP level, bar progress, and guild rank.",
-        type: "XP",
-        badge: "Level"
-      },
-      {
-        name: "/leaderboard",
-        category: "economy",
-        syntax: "/leaderboard",
-        desc_hu: "Szerver TOP 10 legtöbb XP-vel rendelkező tagja.",
-        desc_en: "View the server's TOP 10 highest XP leaderboard.",
-        type: "XP",
-        badge: "Top 10"
-      },
-      {
-        name: "/profile",
-        category: "economy",
-        syntax: "/profile [@tag]",
-        desc_hu: "Komplett adatlap: XP, szint, egyenleg, kitűzők és streak.",
-        desc_en: "Full member profile: XP, level, balance, badges, and streaks.",
-        type: "XP",
-        badge: "Card"
-      },
-      {
-        name: "/achievements",
-        category: "economy",
-        syntax: "/achievements [@tag]",
-        desc_hu: "Megszerzett szerver achievementek listája.",
-        desc_en: "List of unlocked achievements and earned rewards.",
-        type: "XP",
-        badge: "Trophy"
-      },
-
-      // Productivity & Time
-      {
-        name: "/todo",
-        category: "productivity",
-        syntax: "/todo action:add|list|done|remove text:[leírás]",
-        desc_hu: "Személyes tennivaló lista kezelése a szerveren.",
-        desc_en: "Manage your personal guild TODO checklist.",
-        type: "Tool",
-        badge: "Tasks"
-      },
-      {
-        name: "/remind",
-        category: "productivity",
-        syntax: "/remind duration:2h text:<üzenet>",
-        desc_hu: "Tartós emlékeztető felhő-ütemezéssel, restart után is él.",
-        desc_en: "Persistent reminder scheduled in the cloud across restarts.",
-        type: "Time",
-        badge: "Alert"
-      },
-      {
-        name: "/reminders",
-        category: "productivity",
-        syntax: "/reminders",
-        desc_hu: "Saját aktív emlékeztetők listája.",
-        desc_en: "View your currently scheduled active reminders.",
-        type: "Time",
-        badge: "Schedule"
-      },
-      {
-        name: "/timer",
-        category: "productivity",
-        syntax: "/timer duration:25m text:[cím]",
-        desc_hu: "Rövid távú visszaszámláló időzítő.",
-        desc_en: "Short-term countdown timer with stop support.",
-        type: "Time",
-        badge: "Timer"
-      },
-      {
-        name: "/event",
-        category: "productivity",
-        syntax: '/event title:"Cím" date:ÉÉÉÉ-HH-NN time:ÓÓ:PP',
-        desc_hu: "Szerver esemény beütemezése és automatikus felhívás.",
-        desc_en: "Schedule community events with timed notification triggers.",
-        type: "Events",
-        badge: "Event"
-      },
-      {
-        name: "/afk",
-        category: "productivity",
-        syntax: "/afk [indoklás]",
-        desc_hu: "AFK állapot beállítása; említéskor automata értesítés a többieknek.",
-        desc_en: "Set AFK status with automated auto-response on mentions.",
-        type: "Tool",
-        badge: "Status"
-      },
-
-      // Fun & Mini-Games
-      {
-        name: "/coinflip",
-        category: "fun",
-        syntax: "/coinflip choice:fej|iras bet:[tét]",
-        desc_hu: "Pénzfeldobás választható coin fogadási téttel.",
-        desc_en: "Heads or tails coin toss with optional coin betting.",
-        type: "Game",
-        badge: "Chance"
-      },
-      {
-        name: "/rps",
-        category: "fun",
-        syntax: "/rps choice:ko|papir|ollo",
-        desc_hu: "Klasszikus kő-papír-olló párbaj a bot ellen.",
-        desc_en: "Rock-paper-scissors duel against the bot.",
-        type: "Game",
-        badge: "Duel"
-      },
-      {
-        name: "/poll",
-        category: "fun",
-        syntax: "/poll question:<kérdés> option1:<...> option2:<...>",
-        desc_hu: "Gombos szavazás indítása valós idejű számlálóval.",
-        desc_en: "Interactive button poll with live percentage feedback.",
-        type: "Poll",
-        badge: "Vote"
-      },
-      {
-        name: "/valasztas",
-        category: "fun",
-        syntax: "/valasztas items:pizza, burger, gyros",
-        desc_hu: "Véletlenszerű választás a megadott listából.",
-        desc_en: "Random selection from a comma-separated list of items.",
-        type: "Utility",
-        badge: "Random"
-      },
-      {
-        name: "/nyolclabda",
-        category: "fun",
-        syntax: "/nyolclabda question:<kérdés>",
-        desc_hu: "Mágikus 8-as golyó válaszol kérdéseidre.",
-        desc_en: "Magic 8-ball answers your deepest questions.",
-        type: "Fun",
-        badge: "Oracle"
-      },
-      {
-        name: "/roll",
-        category: "fun",
-        syntax: "/roll dice:1d6",
-        desc_hu: "Tetszőleges kockadobás (pl. 2d20, 1d100).",
-        desc_en: "Roll RPG dice of any format (e.g. 2d20, 1d100).",
-        type: "Game",
-        badge: "Dice"
-      },
-
-      // Media & APIs
-      {
-        name: "/gif",
-        category: "media",
-        syntax: "/gif topic:<téma>",
-        desc_hu: "Animált GIF keresés közvetlen beágyazással.",
-        desc_en: "Search and embed animated GIFs instantly.",
-        type: "Media",
-        badge: "Giphy"
-      },
-      {
-        name: "/sticker",
-        category: "media",
-        syntax: "/sticker topic:<téma>",
-        desc_hu: "Matrica keresés közvetlenül a chatbe.",
-        desc_en: "Search and post animated stickers into chat.",
-        type: "Media",
-        badge: "Sticker"
-      },
-      {
-        name: "/idojaras",
-        category: "media",
-        syntax: "/idojaras city:<város>",
-        desc_hu: "Valós idejű időjárás, hőmérséklet és szélsebesség.",
-        desc_en: "Real-time weather, temperature, humidity and conditions.",
-        type: "API",
-        badge: "Weather"
-      },
-      {
-        name: "/steam",
-        category: "media",
-        syntax: "/steam steam_identifier:<azonosító>",
-        desc_hu: "Steam játékos-profil, státusz és 2 heti játékidő.",
-        desc_en: "Steam profile summary, current game and 2-week playtime.",
-        type: "API",
-        badge: "Steam"
-      },
-
-      // General & Core
-      {
-        name: "/lang",
-        category: "general",
-        syntax: "/lang lang:hu|en",
-        desc_hu: "A szerver válasznyelvének azonnali váltása (magyar/angol).",
-        desc_en: "Change the bot's response language on your server.",
-        type: "Core",
-        badge: "Language"
-      },
-      {
-        name: "/info",
-        category: "general",
-        syntax: "/info",
-        desc_hu: "Részletes információ a bot képességeiről és verziójáról.",
-        desc_en: "Detailed summary of bot capabilities, status, and features.",
-        type: "Core",
-        badge: "System"
-      },
-      {
-        name: "/serverinfo",
-        category: "general",
-        syntax: "/serverinfo",
-        desc_hu: "A jelenlegi Discord szerver statisztikái és létszáma.",
-        desc_en: "Statistics, member count, and creation date of the current guild.",
-        type: "Core",
-        badge: "Guild"
-      },
-      {
-        name: "/permcheck",
-        category: "general",
-        syntax: "/permcheck",
-        desc_hu: "A bot jogosultságainak tesztelése az aktuális csatornában.",
-        desc_en: "Check bot permissions within the current channel.",
-        type: "Security",
-        badge: "Perms"
-      }
+      { name: "/daily", category: "economy", syntax: "/daily", desc_hu: "Napi ingyenes érmék felvétele növekvő streak bónusszal.", desc_en: "Claim free daily coins with an increasing streak multiplier.", type: "Economy", badge: "Daily" },
+      { name: "/balance", category: "economy", syntax: "/balance [@felhasználó]", desc_hu: "Saját vagy másik tag coin egyenlegének lekérdezése.", desc_en: "Check your own or another member's coin balance.", type: "Economy", badge: "Coins" },
+      { name: "/shop", category: "economy", syntax: "/shop", desc_hu: "Kozmetikai bolt kitűzőkkel, címekkel és rangot adó badge-ekkel.", desc_en: "Cosmetic catalog with titles, badges and role-granting perks.", type: "Economy", badge: "Store" },
+      { name: "/buy", category: "economy", syntax: "/buy item_key:<tárgy>", desc_hu: "Shop termék megvásárlása coin egyenlegből.", desc_en: "Purchase an item from the shop using your coin balance.", type: "Economy", badge: "Shop" },
+      { name: "/inventory", category: "economy", syntax: "/inventory [@felhasználó]", desc_hu: "Megvásárolt címek és badge-ek listája.", desc_en: "View owned cosmetic items, badges, and titles.", type: "Economy", badge: "Items" },
+      { name: "/equip", category: "economy", syntax: "/equip item_key:<tárgy>", desc_hu: "Cím vagy kitűző felszerelése profilodra és neved mellé.", desc_en: "Equip a cosmetic title or badge next to your server display name.", type: "Economy", badge: "Equip" },
+      { name: "/give", category: "economy", syntax: "/give member:@tag amount:<összeg>", desc_hu: "Coin átutalása egy másik szervertagnak.", desc_en: "Transfer coins to another server member securely.", type: "Economy", badge: "Transfer" },
+      { name: "/rank", category: "economy", syntax: "/rank [@tag]", desc_hu: "XP szint, tapasztalati sáv és szerver helyezés.", desc_en: "Inspect your current XP level, bar progress, and guild rank.", type: "XP", badge: "Level" },
+      { name: "/leaderboard", category: "economy", syntax: "/leaderboard", desc_hu: "Szerver TOP 10 legtöbb XP-vel rendelkező tagja.", desc_en: "View the server's TOP 10 highest XP leaderboard.", type: "XP", badge: "Top 10" },
+      { name: "/profile", category: "economy", syntax: "/profile [@tag]", desc_hu: "Komplett adatlap: XP, szint, egyenleg, kitűzők és streak.", desc_en: "Full member profile: XP, level, balance, badges, and streaks.", type: "XP", badge: "Card" },
+      { name: "/achievements", category: "economy", syntax: "/achievements [@tag]", desc_hu: "Megszerzett szerver achievementek listája.", desc_en: "List of unlocked achievements and earned rewards.", type: "XP", badge: "Trophy" },
+      { name: "/todo", category: "productivity", syntax: "/todo action:add|list|done|remove text:[leírás]", desc_hu: "Személyes tennivaló lista kezelése a szerveren.", desc_en: "Manage your personal guild TODO checklist.", type: "Tool", badge: "Tasks" },
+      { name: "/remind", category: "productivity", syntax: "/remind duration:2h text:<üzenet>", desc_hu: "Tartós emlékeztető felhő-ütemezéssel, restart után is él.", desc_en: "Persistent reminder scheduled in the cloud across restarts.", type: "Time", badge: "Alert" },
+      { name: "/reminders", category: "productivity", syntax: "/reminders", desc_hu: "Saját aktív emlékeztetők listája.", desc_en: "View your currently scheduled active reminders.", type: "Time", badge: "Schedule" },
+      { name: "/timer", category: "productivity", syntax: "/timer duration:25m text:[cím]", desc_hu: "Rövid távú visszaszámláló időzítő.", desc_en: "Short-term countdown timer with stop support.", type: "Time", badge: "Timer" },
+      { name: "/event", category: "productivity", syntax: '/event title:"Cím" date:ÉÉÉÉ-HH-NN time:ÓÓ:PP', desc_hu: "Szerver esemény beütemezése és automatikus felhívás.", desc_en: "Schedule community events with timed notification triggers.", type: "Events", badge: "Event" },
+      { name: "/afk", category: "productivity", syntax: "/afk [indoklás]", desc_hu: "AFK állapot beállítása; említéskor automata értesítés a többieknek.", desc_en: "Set AFK status with automated auto-response on mentions.", type: "Tool", badge: "Status" },
+      { name: "/coinflip", category: "fun", syntax: "/coinflip choice:fej|iras bet:[tét]", desc_hu: "Pénzfeldobás választható coin fogadási téttel.", desc_en: "Heads or tails coin toss with optional coin betting.", type: "Game", badge: "Chance" },
+      { name: "/rps", category: "fun", syntax: "/rps choice:ko|papir|ollo", desc_hu: "Klasszikus kő-papír-olló párbaj a bot ellen.", desc_en: "Rock-paper-scissors duel against the bot.", type: "Game", badge: "Duel" },
+      { name: "/poll", category: "fun", syntax: "/poll question:<kérdés> option1:<...> option2:<...>", desc_hu: "Gombos szavazás indítása valós idejű számlálóval.", desc_en: "Interactive button poll with live percentage feedback.", type: "Poll", badge: "Vote" },
+      { name: "/valasztas", category: "fun", syntax: "/valasztas items:pizza, burger, gyros", desc_hu: "Véletlenszerű választás a megadott listából.", desc_en: "Random selection from a comma-separated list of items.", type: "Utility", badge: "Random" },
+      { name: "/nyolclabda", category: "fun", syntax: "/nyolclabda question:<kérdés>", desc_hu: "Mágikus 8-as golyó válaszol kérdéseidre.", desc_en: "Magic 8-ball answers your deepest questions.", type: "Fun", badge: "Oracle" },
+      { name: "/roll", category: "fun", syntax: "/roll dice:1d6", desc_hu: "Tetszőleges kockadobás (pl. 2d20, 1d100).", desc_en: "Roll RPG dice of any format (e.g. 2d20, 1d100).", type: "Game", badge: "Dice" },
+      { name: "/gif", category: "media", syntax: "/gif topic:<téma>", desc_hu: "Animált GIF keresés közvetlen beágyazással.", desc_en: "Search and embed animated GIFs instantly.", type: "Media", badge: "Giphy" },
+      { name: "/sticker", category: "media", syntax: "/sticker topic:<téma>", desc_hu: "Matrica keresés közvetlenül a chatbe.", desc_en: "Search and post animated stickers into chat.", type: "Media", badge: "Sticker" },
+      { name: "/idojaras", category: "media", syntax: "/idojaras city:<város>", desc_hu: "Valós idejű időjárás, hőmérséklet és szélsebesség.", desc_en: "Real-time weather, temperature, humidity and conditions.", type: "API", badge: "Weather" },
+      { name: "/steam", category: "media", syntax: "/steam steam_identifier:<azonosító>", desc_hu: "Steam játékos-profil, státusz és 2 heti játékidő.", desc_en: "Steam profile summary, current game and 2-week playtime.", type: "API", badge: "Steam" },
+      { name: "/lang", category: "general", syntax: "/lang lang:hu|en", desc_hu: "A szerver válasznyelvének azonnali váltása (magyar/angol).", desc_en: "Change the bot's response language on your server.", type: "Core", badge: "Language" },
+      { name: "/info", category: "general", syntax: "/info", desc_hu: "Részletes információ a bot képességeiről és verziójáról.", desc_en: "Detailed summary of bot capabilities, status, and features.", type: "Core", badge: "System" },
+      { name: "/serverinfo", category: "general", syntax: "/serverinfo", desc_hu: "A jelenlegi Discord szerver statisztikái és létszáma.", desc_en: "Statistics, member count, and creation date of the current guild.", type: "Core", badge: "Guild" },
+      { name: "/permcheck", category: "general", syntax: "/permcheck", desc_hu: "A bot jogosultságainak tesztelése az aktuális csatornában.", desc_en: "Check bot permissions within the current channel.", type: "Security", badge: "Perms" }
     ];
 
-    // ========================================================
-    // BILINGUAL TRANSLATION STRINGS
-    // ========================================================
     const I18N = {
       hu: {
         "header.subtitle": "Discord Közösségi Rendszer",
@@ -1075,7 +731,6 @@
         "cmd.catGeneral": "Általános",
         "cmd.noResult": "Nem található megfelelő parancs.",
         "cmd.noResultSub": "Próbálj meg más keresési kifejezést vagy kategóriát.",
-        "cmd.copy": "Másolás",
         "sec.badge": "Biztonsági Standardok",
         "sec.title": "Biztonság és tiszta adatkezelés kompromisszumok nélkül.",
         "sec.desc": "A szervered integritása az első. A bot a legszigorúbb adatvédelmi elvek mentén épült fel, garantálva a tagok nyugalmát.",
@@ -1091,9 +746,7 @@
         "cta.desc": "A telepítés mindössze néhány másodperc. Hívd meg a botot, és az összes slash parancs azonnal készen áll a használatra.",
         "cta.btn": "Meghívás egy kattintással",
         "footer.rights": "© 2026. Minden jog fenntartva.",
-        "footer.home": "Főoldal",
-        "modal.compliance": "Discord Developer Irányelveknek Megfelelő",
-        "modal.close": "Rendben / Bezárás"
+        "footer.home": "Főoldal"
       },
       en: {
         "header.subtitle": "Discord Community Companion",
@@ -1138,7 +791,6 @@
         "cmd.catGeneral": "General",
         "cmd.noResult": "No commands found.",
         "cmd.noResultSub": "Try searching for a different keyword or category.",
-        "cmd.copy": "Copy",
         "sec.badge": "Security Standards",
         "sec.title": "Uncompromising privacy and modern security.",
         "sec.desc": "Your server's trust comes first. RubberDuck strictly enforces least-privilege principles to keep members safe.",
@@ -1154,15 +806,10 @@
         "cta.desc": "Setup takes only 30 seconds. Authorize the bot and all slash commands become active immediately.",
         "cta.btn": "Authorize in One Click",
         "footer.rights": "© 2026. All rights reserved.",
-        "footer.home": "Home",
-        "modal.compliance": "Discord Developer Compliant",
-        "modal.close": "Understood / Close"
+        "footer.home": "Home"
       }
     };
 
-    // ========================================================
-    // STATE & REACTIVE CONTROLLERS
-    // ========================================================
     let currentLang = localStorage.getItem('rubberduck_lang') || 'hu';
     let currentCategory = 'all';
 
@@ -1171,16 +818,12 @@
       localStorage.setItem('rubberduck_lang', lang);
       document.getElementById('langCurrentBadge').textContent = lang.toUpperCase();
 
-      // Translate all DOM nodes marked with data-i18n
       const dict = I18N[lang] || I18N['hu'];
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (dict[key]) {
-          el.textContent = dict[key];
-        }
+        if (dict[key]) el.textContent = dict[key];
       });
 
-      // Update placeholder
       const searchBox = document.getElementById('commandSearch');
       if (searchBox) {
         searchBox.placeholder = lang === 'hu' ? 'Parancs vagy leírás keresése...' : 'Search commands or syntax...';
@@ -1194,8 +837,7 @@
     }
 
     function toggleMobileNav() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
+      document.getElementById('mobileMenu').classList.toggle('hidden');
     }
 
     function setCommandCategory(cat) {
@@ -1222,10 +864,7 @@
       const filtered = COMMAND_REGISTRY.filter(cmd => {
         const matchesCategory = currentCategory === 'all' || cmd.category === currentCategory;
         const desc = currentLang === 'hu' ? cmd.desc_hu : cmd.desc_en;
-        const matchesQuery = !query || 
-                             cmd.name.toLowerCase().includes(query) || 
-                             cmd.syntax.toLowerCase().includes(query) || 
-                             desc.toLowerCase().includes(query);
+        const matchesQuery = !query || cmd.name.toLowerCase().includes(query) || cmd.syntax.toLowerCase().includes(query) || desc.toLowerCase().includes(query);
         return matchesCategory && matchesQuery;
       });
 
@@ -1244,24 +883,14 @@
           <div class="glass-bento rounded-2xl p-5 flex flex-col justify-between group hover:border-brand-duck/40">
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="font-mono text-sm font-bold text-white group-hover:text-brand-duck transition-colors">
-                  ${cmd.name}
-                </span>
-                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-amber-300 font-semibold">
-                  ${cmd.badge}
-                </span>
+                <span class="font-mono text-sm font-bold text-white group-hover:text-brand-duck transition-colors">${cmd.name}</span>
+                <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-amber-300 font-semibold">${cmd.badge}</span>
               </div>
-
-              <!-- Syntax Box -->
               <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 font-mono text-[11px] text-slate-300 select-all mb-3 break-all flex items-center justify-between">
                 <span>${cmd.syntax}</span>
               </div>
-
-              <p class="text-xs text-slate-300 leading-relaxed mb-4">
-                ${desc}
-              </p>
+              <p class="text-xs text-slate-300 leading-relaxed mb-4">${desc}</p>
             </div>
-
             <div class="pt-3 border-t border-white/5 flex items-center justify-between">
               <span class="text-[10px] font-mono text-slate-400">Slash Command</span>
               <button onclick="copyToClipboard('${cmd.syntax}')" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-brand-duck hover:text-slate-950 text-slate-300 font-mono text-[11px] transition-all flex items-center gap-1.5">
@@ -1274,9 +903,6 @@
       }).join('');
     }
 
-    // ========================================================
-    // CLIPBOARD UTILITY WITH TOAST FEEDBACK
-    // ========================================================
     function copyToClipboard(text) {
       const el = document.createElement('textarea');
       el.value = text;
@@ -1304,169 +930,17 @@
       }, 2400);
     }
 
-    // Interactive Demo feedback in Hero mockup
     function triggerDemoInteraction(action) {
       const box = document.getElementById('demoInteractionBox');
       box.classList.remove('hidden');
       if (action === 'profile') {
-        box.innerHTML = currentLang === 'hu' 
-          ? '⚡ Demo: Betöltve <b>JohnDoe</b> adatlapja (Szint: 14, 18 450 XP, 3 420 🪙)' 
-          : '⚡ Demo: Loaded <b>JohnDoe</b> profile card (Level 14, 18,450 XP, 3,420 🪙)';
+        box.innerHTML = currentLang === 'hu' ? '⚡ Demo: Betöltve <b>JohnDoe</b> adatlapja (Szint: 14, 18 450 XP, 3 420 🪙)' : '⚡ Demo: Loaded <b>JohnDoe</b> profile card (Level 14, 18,450 XP, 3,420 🪙)';
       } else {
-        box.innerHTML = currentLang === 'hu'
-          ? '🛍️ Demo: A /shop megnyitásával elérhető 12 egyedi kitűző és rang.'
-          : '🛍️ Demo: Opening /shop displays 12 collectible badges and cosmetic perks.';
+        box.innerHTML = currentLang === 'hu' ? '🛍️ Demo: A /shop megnyitásával elérhető 12 egyedi kitűző és rang.' : '🛍️ Demo: Opening /shop displays 12 collectible badges and cosmetic perks.';
       }
-      setTimeout(() => {
-        box.classList.add('hidden');
-      }, 4000);
+      setTimeout(() => { box.classList.add('hidden'); }, 4000);
     }
 
-    // ========================================================
-    // MODAL DIALOG CONTROLLER (PRIVACY & TERMS)
-    // ========================================================
-    const LEGAL_DOCS = {
-      privacy: {
-        title_hu: "Adatvédelmi Tájékoztató (Privacy Policy)",
-        title_en: "Privacy Policy",
-        content_hu: `
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">1. Áttekintés & Elköteleződés</h4>
-              <p>A RubberDuck Discord bot fejlesztői elkötelezettek a felhasználói magánszféra védelme mellett. Jelen szabályzat ismerteti, hogy a bot milyen minimális adatokat kezel a szerver funkcióinak biztosításához.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">2. Kezelt Adatok Köre</h4>
-              <ul class="list-disc pl-5 space-y-1 text-slate-400">
-                <li><strong>Azonosítók:</strong> Discord Felhasználói ID, Szerver (Guild) ID és Csatorna ID – kizárólag a szintek, egyenlegek és jogosultságok társításához.</li>
-                <li><strong>Játékstatisztikák:</strong> XP pontok, szintek, virtuális érmék és megszerzett kitűzők.</li>
-                <li><strong>Explicit feljegyzések:</strong> A felhasználó által létrehozott feladatok (/todo), beállított emlékeztetők (/remind) szövege és kívánt lejárati ideje.</li>
-                <li><strong>Nyelvi beállítás:</strong> A szerveren kiválasztott alapértelmezett nyelv (hu/en).</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">3. Amit Kifejezetten NEM Tárolunk</h4>
-              <p>A bot <strong>nem rögzíti és nem menti a tagok elküldött üzeneteit</strong>. Az automatikus moderáció vagy kulcsszavak észlelése valós időben, átmenetileg a memóriában zajlik. Valós személyes adatokat (név, cím, IP cím, banki adatok) a bot soha nem kér és nem kezel.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">4. Adatbiztonság</h4>
-              <p>A kezelt adatok titkosított kapcsolaton keresztül jutnak el a perzisztens tárolóba. Az adatokat semmilyen harmadik félnek, hirdetőnek vagy közvetítőnek nem értékesítjük.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">5. Törlési Jogosultság (GDPR)</h4>
-              <p>Bármely felhasználó vagy szervertulajdonos kérheti az azonosítójához kapcsolt adatok végleges és teljes törlését a bot üzemeltetőjétől.</p>
-            </div>
-          </div>
-        `,
-        content_en: `
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">1. Overview & Commitment</h4>
-              <p>The developers of RubberDuck Discord bot are firmly committed to user privacy. This policy defines the minimal technical data retained to provide reliable bot functionality.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">2. Data We Retain</h4>
-              <ul class="list-disc pl-5 space-y-1 text-slate-400">
-                <li><strong>Identifiers:</strong> Discord User ID, Guild ID, and Channel ID strictly required to tie levels, balance, and permissions.</li>
-                <li><strong>Progression Data:</strong> XP points, level counters, virtual coin balances, and equipped cosmetic items.</li>
-                <li><strong>Explicit User Data:</strong> TODO tasks (/todo) and reminders (/remind) created directly by users.</li>
-                <li><strong>Guild Configuration:</strong> Guild default response language (HU or EN).</li>
-              </ul>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">3. Data We Do NOT Retain</h4>
-              <p>We <strong>do not archive or log chat messages</strong>. Automated keyword detection operates purely in volatile memory. We never request or store real-world personal information like real names, locations, or payment records.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">4. Data Protection & Sharing</h4>
-              <p>Data transmission occurs over encrypted channels. We never sell, lease, or monetize user data with third-party advertisers.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">5. Right to Erasure (GDPR)</h4>
-              <p>Users may request complete, permanent removal of all data associated with their Discord ID by contacting the bot developers.</p>
-            </div>
-          </div>
-        `
-      },
-      terms: {
-        title_hu: "Felhasználási Feltételek (Terms of Service)",
-        title_en: "Terms of Service",
-        content_hu: `
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">1. Feltételek Elfogadása</h4>
-              <p>A RubberDuck bot szerverhez adásával vagy annak bármely parancsának használatával Ön magára nézve kötelezőnek ismeri el a jelen Feltételeket, valamint a Discord Hivatalos Felhasználási Feltételeit és Közösségi Irányelveit.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">2. Elfogadható Használat</h4>
-              <p>Tilos a bot infrastruktúrájának szándékos túlterhelése, hibák kihasználása (exploit), a parancsok szkriptekkel való spammelése, vagy a bot funkcióinak felhasználása gyűlöletkeltő vagy jogellenes tartalmak terjesztésére.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">3. Virtuális Érmék & Kozmetikai Elemek</h4>
-              <p>A bot rendszerében lévő virtuális coinok, szintek és kitűzők kizárólag szórakoztató célt szolgálnak. <strong>Valódi pénzbeli értékkel nem bírnak</strong>, készpénzre nem válthatók, és valódi fizetőeszközért nem értékesíthetők.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">4. Felelősségkizárás</h4>
-              <p>A bot "ahogy van" (as-is) alapon érhető el. A fejlesztők minden tőlük telhetőt megtesznek a folyamatos rendelkezésre állásért, de nem vállalnak felelősséget a külső API-k (pl. Discord hálózat) kimaradásából adódó átmeneti kiesésekért.</p>
-            </div>
-          </div>
-        `,
-        content_en: `
-          <div class="space-y-4">
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">1. Acceptance of Terms</h4>
-              <p>By inviting RubberDuck to your server or executing any of its commands, you agree to comply with these Terms as well as Discord's official Terms of Service and Community Guidelines.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">2. Acceptable Use</h4>
-              <p>You agree not to overload bot systems, exploit vulnerabilities, automate command spam with external scripts, or propagate illegal or harassing content through bot features.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">3. Virtual Economy & Items</h4>
-              <p>All in-game coins, ranks, and titles are fictional tokens intended solely for community entertainment. <strong>They hold zero real-world value</strong> and cannot be redeemed for fiat currency.</p>
-            </div>
-            <div>
-              <h4 class="font-bold text-white text-sm mb-1">4. Disclaimer of Warranty</h4>
-              <p>RubberDuck is provided on an 'as-is' and 'as-available' basis. The developers cannot be held liable for service interruptions caused by third-party outages or network downtime.</p>
-            </div>
-          </div>
-        `
-      }
-    };
-
-    function openModal(type) {
-      const doc = LEGAL_DOCS[type];
-      if (!doc) return;
-
-      const modal = document.getElementById('legalModal');
-      const title = document.getElementById('modalTitle');
-      const content = document.getElementById('modalContent');
-
-      title.textContent = currentLang === 'hu' ? doc.title_hu : doc.title_en;
-      content.innerHTML = currentLang === 'hu' ? doc.content_hu : doc.content_en;
-
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.remove('opacity-0');
-        modal.classList.add('opacity-100');
-      }, 10);
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('legalModal');
-      modal.classList.remove('opacity-100');
-      modal.classList.add('opacity-0');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-      }, 250);
-    }
-
-    // Close modal on click outside
-    document.getElementById('legalModal').addEventListener('click', (e) => {
-      if (e.target.id === 'legalModal') closeModal();
-    });
-
-    // Initialize application on page load
     window.addEventListener('DOMContentLoaded', () => {
       setLanguage(currentLang);
     });

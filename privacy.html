@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adatvédelmi Tájékoztató • RubberDuck Bot Privacy Policy</title>
+  <meta name="description" content="A RubberDuck Discord bot hivatalos és részletes Adatvédelmi Tájékoztatója (Privacy Policy) a Discord Developer Verification és GDPR követelményeinek megfelelően.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              duck: '#FBBF24',
+              amberGlow: '#F59E0B',
+              violet: '#8B5CF6',
+              cyan: '#06B6D4',
+              emerald: '#10B981',
+              discord: '#5865F2'
+            },
+            surface: {
+              base: '#0B0D17',
+              card: 'rgba(18, 22, 41, 0.72)',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .bg-mesh {
+      background-color: #0B0D17;
+      background-image: 
+        radial-gradient(at 15% 15%, rgba(139, 92, 246, 0.15) 0px, transparent 55%),
+        radial-gradient(at 85% 15%, rgba(251, 191, 36, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 70%, rgba(6, 182, 212, 0.10) 0px, transparent 60%);
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(18, 23, 44, 0.75);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-mesh text-slate-200 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-duck selection:text-slate-950">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-surface-base/80 border-b border-white/5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-brand-duck/20 border border-brand-duck/40 flex items-center justify-center text-xl">
+          🦆
+        </div>
+        <span class="text-lg font-bold text-white tracking-tight">RubberDuck</span>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-mono font-semibold text-slate-200 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-language text-brand-duck"></i>
+          <span id="langCurrentBadge">HU</span>
+          <span class="text-[10px] text-slate-400">/ EN</span>
+        </button>
+
+        <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl font-semibold text-xs text-slate-950 bg-gradient-to-r from-brand-duck to-amber-500 hover:brightness-110 transition-all">
+          <i class="fa-brands fa-discord mr-1.5"></i>
+          <span data-i18n="btn.invite">Meghívás</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="flex-1 py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Back Link -->
+      <a href="index.html" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-brand-duck mb-8 transition-colors">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-i18n="back">Vissza a főoldalra</span>
+      </a>
+
+      <!-- Document Title -->
+      <div class="mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-emerald/30 bg-brand-emerald/10 text-brand-emerald text-xs font-semibold mb-3">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span data-i18n="badge">Discord Developer & GDPR Megfelelő</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="title">
+          Adatvédelmi Tájékoztató (Privacy Policy)
+        </h1>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2" data-i18n="updated">
+          Hatálybalépés dátuma: 2026. március 1. • Verzió: 2.0
+        </p>
+      </div>
+
+      <!-- Legal Container -->
+      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-8 text-xs sm:text-sm leading-relaxed text-slate-300">
+        
+        <!-- Section 1 -->
+        <section class="space-y-2">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">1.</span>
+            <span data-i18n="s1.title">Általános Információk & Célok</span>
+          </h2>
+          <p data-i18n="s1.desc">
+            Jelen Adatvédelmi Tájékoztató részletesen meghatározza, hogy a RubberDuck Discord bot milyen minimális technikai adatokat dolgoz fel, tárol vagy töröl, amikor hozzáadod egy Discord szerverhez, illetve amikor a szerver tagjai parancsokat futtatnak.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="space-y-3">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">2.</span>
+            <span data-i18n="s2.title">A Kezelt Adatok Köre és Pontos Célja</span>
+          </h2>
+          <p data-i18n="s2.desc">A bot kizárólag a rendeltetésszerű működéséhez nélkülözhetetlen, Discord által biztosított numerikus azonosítókat és felhasználó által explicit megadott adatokat kezeli:</p>
+          <ul class="list-disc pl-5 space-y-2 text-slate-300">
+            <li><strong class="text-white">Numerikus Discord Azonosítók (User ID, Guild ID, Channel ID):</strong> A felhasználóhoz tartozó XP szint, egyenleg és beállítások szerverhez rendeléséhez szükséges.</li>
+            <li><strong class="text-white">Játékstatisztika & Rang adatok:</strong> Az összegyűjtött XP pontok száma, elért szintek, virtuális coin egyenleg, vásárolt bolt-kitűzők és napi streak számláló.</li>
+            <li><strong class="text-white">Felhasználó által rögzített feljegyzések:</strong> A <code>/todo</code> paranccsal hozzáadott teendők szövege és állapota, valamint a <code>/remind</code> és <code>/event</code> parancsokhoz tartozó ütemezett időpontok és értesítési szövegek.</li>
+            <li><strong class="text-white">Szerver konfiguráció:</strong> A kiválasztott alapértelmezett nyelv (magyar vagy angol).</li>
+          </ul>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="space-y-2">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">3.</span>
+            <span data-i18n="s3.title">Amit Kifejezetten NEM Gyűjtünk és NEM Naplózunk</span>
+          </h2>
+          <div class="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-2">
+            <p data-i18n="s3.desc1">
+              • <strong class="text-brand-emerald">Nulla Chat Naplózás:</strong> A felhasználók üzeneteinek tartalmát semmilyen tartós adatbázisban, naplófájlban vagy külső helyen nem tároljuk. A szószűrők és kulcsszavas válaszok kizárólag a beérkezés másodpercében, a memóriában (RAM) futnak le.
+            </p>
+            <p data-i18n="s3.desc2">
+              • <strong class="text-brand-emerald">Valós Személyes Adatok:</strong> Nem gyűjtünk és nem tárolunk valós neveket, lakcímeket, e-mail címeket, IP címeket, jelszavakat vagy banki információkat.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="space-y-2">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">4.</span>
+            <span data-i18n="s4.title">Adattovábbítás Harmadik Fél Részére</span>
+          </h2>
+          <p data-i18n="s4.desc">
+            A kezelt adatokat semmilyen körülmények között nem értékesítjük, nem adjuk bérbe hirdetőknek vagy profilozó szervezeteknek. Külső szolgáltatók (pl. Discord API, GIPHY média kereső, OpenWeather, Steam Web API) felé kizárólag a parancs futtatásához szükséges keresési kifejezés vagy Steam azonosító jut el, a Discord fiókod összekötése nélkül.
+          </p>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="space-y-2">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">5.</span>
+            <span data-i18n="s5.title">Adattörlés és Érintetti Jogok (GDPR Right to Erasure)</span>
+          </h2>
+          <p data-i18n="s5.desc">
+            Bármely felhasználó vagy szervertulajdonos jogosult kérni az adott felhasználói ID-hoz vagy szerverhez tartozó összes tárolt adat (XP statisztikák, virtuális egyenleg, todo listák, ütemezett emlékeztetők) azonnali és végleges törlését. Kérésedet elküldheted a hivatalos Discord szerveren vagy a bot üzemeltetőjénél.
+          </p>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="space-y-2">
+          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+            <span class="text-brand-duck">6.</span>
+            <span data-i18n="s6.title">Biztonsági Intézkedések</span>
+          </h2>
+          <p data-i18n="s6.desc">
+            Az adatok védelmét titkosított átviteli csatornák (TLS/HTTPS), szigorú jogosultsági szintek és korlátozott belső hozzáférések garantálják.
+          </p>
+        </section>
+
+      </div>
+
+      <!-- Footer navigation -->
+      <div class="mt-8 flex items-center justify-between text-xs text-slate-400 font-mono">
+        <a href="terms.html" class="hover:text-brand-duck transition-colors">➔ Felhasználási Feltételek (Terms)</a>
+        <a href="index.html" class="hover:text-brand-duck transition-colors">➔ Főoldal</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-500">
+    RubberDuck Bot • Hivatalos Jogi Dokumentáció • 2026
+  </footer>
+
+  <script>
+    const I18N = {
+      hu: {
+        "btn.invite": "Meghívás",
+        "back": "Vissza a főoldalra",
+        "badge": "Discord Developer & GDPR Megfelelő",
+        "title": "Adatvédelmi Tájékoztató (Privacy Policy)",
+        "updated": "Hatálybalépés dátuma: 2026. március 1. • Verzió: 2.0",
+        "s1.title": "Általános Információk & Célok",
+        "s1.desc": "Jelen Adatvédelmi Tájékoztató részletesen meghatározza, hogy a RubberDuck Discord bot milyen minimális technikai adatokat dolgoz fel, tárol vagy töröl, amikor hozzáadod egy Discord szerverhez, illetve amikor a szerver tagjai parancsokat futtatnak.",
+        "s2.title": "A Kezelt Adatok Köre és Pontos Célja",
+        "s2.desc": "A bot kizárólag a rendeltetésszerű működéséhez nélkülözhetetlen, Discord által biztosított numerikus azonosítókat és felhasználó által explicit megadott adatokat kezeli:",
+        "s3.title": "Amit Kifejezetten NEM Gyűjtünk és NEM Naplózunk",
+        "s3.desc1": "• Nulla Chat Naplózás: A felhasználók üzeneteinek tartalmát semmilyen tartós adatbázisban, naplófájlban vagy külső helyen nem tároljuk. A szószűrők és kulcsszavas válaszok kizárólag a beérkezés másodpercében, a memóriában (RAM) futnak le.",
+        "s3.desc2": "• Valós Személyes Adatok: Nem gyűjtünk és nem tárolunk valós neveket, lakcímeket, e-mail címeket, IP címeket, jelszavakat vagy banki információkat.",
+        "s4.title": "Adattovábbítás Harmadik Fél Részére",
+        "s4.desc": "A kezelt adatokat semmilyen körülmények között nem értékesítjük, nem adjuk bérbe hirdetőknek vagy profilozó szervezeteknek. Külső szolgáltatók felé kizárólag a parancs futtatásához szükséges keresési kifejezés jut el.",
+        "s5.title": "Adattörlés és Érintetti Jogok (GDPR Right to Erasure)",
+        "s5.desc": "Bármely felhasználó vagy szervertulajdonos jogosult kérni az adott felhasználói ID-hoz vagy szerverhez tartozó összes tárolt adat azonnali és végleges törlését a bot üzemeltetőjétől.",
+        "s6.title": "Biztonsági Intézkedések",
+        "s6.desc": "Az adatok védelmét titkosított átviteli csatornák, szigorú jogosultsági szintek és korlátozott belső hozzáférések garantálják."
+      },
+      en: {
+        "btn.invite": "Invite Bot",
+        "back": "Back to Home",
+        "badge": "Discord Developer & GDPR Compliant",
+        "title": "Privacy Policy",
+        "updated": "Effective Date: March 1, 2026 • Version: 2.0",
+        "s1.title": "Overview & Purpose",
+        "s1.desc": "This Privacy Policy describes how RubberDuck Bot collects, processes, and protects minimal technical user data when installed on a Discord guild or when members execute slash commands.",
+        "s2.title": "Categories of Data Collected and Purpose",
+        "s2.desc": "RubberDuck retains only the minimal technical data strictly necessary to provide features:",
+        "s3.title": "What We Explicitly DO NOT Collect or Store",
+        "s3.desc1": "• Zero Chat Logging: We never store or log chat messages. Keyword triggers and moderation operate entirely in volatile memory (RAM) at the time of arrival.",
+        "s3.desc2": "• No Personal Data: We never request or collect real-world identities, physical addresses, emails, IP addresses, passwords, or payment credentials.",
+        "s4.title": "Third-Party Data Sharing",
+        "s4.desc": "We do not sell, rent, or trade your data to third parties. Media and information queries (e.g. GIPHY, OpenWeather, Steam) only transmit user-supplied search parameters without identifying information.",
+        "s5.title": "Data Deletion and User Rights (GDPR)",
+        "s5.desc": "Any user or guild administrator may request permanent erasure of all stored statistics, XP, inventory items, and reminders associated with their ID by contacting the bot team.",
+        "s6.title": "Security Measures",
+        "s6.desc": "Data transmission is protected via modern cryptographic protocols (TLS/HTTPS) alongside strict access controls."
+      }
+    };
+
+    let currentLang = localStorage.getItem('rubberduck_lang') || 'hu';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('rubberduck_lang', lang);
+      document.getElementById('langCurrentBadge').textContent = lang.toUpperCase();
+      const dict = I18N[lang] || I18N['hu'];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'hu' ? 'en' : 'hu');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
+  </script>
+</body>
+</html>
