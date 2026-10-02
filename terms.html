@@ -1,263 +1,65 @@
 <!DOCTYPE html>
-<html lang="hu" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Felhasználási Feltételek • RubberDuck Bot Terms of Service</title>
-  <meta name="description" content="A RubberDuck Discord bot hivatalos Felhasználási Feltételei (Terms of Service) a Discord Developer Verification követelményeinek megfelelően.">
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Terms of Service — RubberDuck Bot</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'monospace'],
-          },
-          colors: {
-            brand: {
-              duck: '#FBBF24',
-              amberGlow: '#F59E0B',
-              violet: '#8B5CF6',
-              cyan: '#06B6D4',
-              emerald: '#10B981',
-              discord: '#5865F2'
-            },
-            surface: {
-              base: '#0B0D17',
-              card: 'rgba(18, 22, 41, 0.72)',
-            }
-          }
-        }
-      }
-    }
-  </script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .bg-mesh {
-      background-color: #0B0D17;
-      background-image: 
-        radial-gradient(at 15% 15%, rgba(139, 92, 246, 0.15) 0px, transparent 55%),
-        radial-gradient(at 85% 15%, rgba(251, 191, 36, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 70%, rgba(6, 182, 212, 0.10) 0px, transparent 60%);
-      background-attachment: fixed;
-    }
-    .glass-card {
-      background: rgba(18, 23, 44, 0.75);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    body {
+      background-color: #080A12;
+      color: #E2E8F0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
     }
   </style>
 </head>
-<body class="bg-mesh text-slate-200 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-duck selection:text-slate-950">
+<body class="min-h-screen py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm text-amber-400 hover:underline mb-8">
+      &larr; Back to RubberDuck Homepage
+    </a>
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 backdrop-blur-xl bg-surface-base/80 border-b border-white/5">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-brand-duck/20 border border-brand-duck/40 flex items-center justify-center text-xl">
-          🦆
-        </div>
-        <span class="text-lg font-bold text-white tracking-tight">RubberDuck</span>
-      </a>
-
-      <div class="flex items-center gap-3">
-        <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 text-xs font-mono font-semibold text-slate-200 transition-all flex items-center gap-2">
-          <i class="fa-solid fa-language text-brand-duck"></i>
-          <span id="langCurrentBadge">HU</span>
-          <span class="text-[10px] text-slate-400">/ EN</span>
-        </button>
-
-        <a href="https://discord.com/oauth2/authorize?client_id=1420676612881645590&permissions=8&integration_type=0&scope=bot+applications.commands" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl font-semibold text-xs text-slate-950 bg-gradient-to-r from-brand-duck to-amber-500 hover:brightness-110 transition-all">
-          <i class="fa-brands fa-discord mr-1.5"></i>
-          <span data-i18n="btn.invite">Meghívás</span>
-        </a>
+    <header class="border-b border-white/10 pb-6 mb-8">
+      <div class="flex items-center gap-3 mb-2">
+        <span class="text-3xl">🦆</span>
+        <h1 class="text-3xl font-extrabold text-white">Terms of Service</h1>
       </div>
+      <p class="text-sm text-slate-400">Effective Date: October 2026 • User Agreement</p>
+    </header>
+
+    <div class="space-y-8 text-sm text-slate-300 leading-relaxed">
+      <section>
+        <h2 class="text-lg font-bold text-white mb-2">1. Agreement to Terms</h2>
+        <p>By inviting RubberDuck to your Discord server or using any of its commands, you agree to comply with these Terms of Service and Discord's Terms of Service and Community Guidelines.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-bold text-white mb-2">2. Acceptable Use</h2>
+        <p class="mb-2">Users agree not to:</p>
+        <ul class="list-disc pl-5 space-y-1.5 text-slate-400">
+          <li>Attempt to exploit, reverse engineer, or intentionally overload the bot's command pipelines or APIs.</li>
+          <li>Use automated scripts or macros to bypass cooldown limits on XP gain, economy, or puzzle challenges.</li>
+          <li>Use the bot to transmit abusive, hateful, or illegal content via broadcast cards or custom announcements.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-bold text-white mb-2">3. Virtual Economy Disclaimer</h2>
+        <p>Coins, badges, titles, and levels acquired within RubberDuck represent strictly virtual, non-monetary elements. They hold no real-world financial value, cannot be redeemed for fiat currency, and are not transferable outside of supported bot commands.</p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-bold text-white mb-2">4. Availability & Warranties</h2>
+        <p>RubberDuck is provided "as is" and "as available". While we strive for 99.9% uptime and reliable reminder scheduling, we are not liable for delayed notifications or downtime resulting from Discord API outages or maintenance.</p>
+      </section>
     </div>
-  </header>
 
-  <!-- CONTENT -->
-  <main class="flex-1 py-12 sm:py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      
-      <a href="index.html" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-brand-duck mb-8 transition-colors">
-        <i class="fa-solid fa-arrow-left"></i>
-        <span data-i18n="back">Vissza a főoldalra</span>
-      </a>
-
-      <div class="mb-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-duck/30 bg-brand-duck/10 text-brand-duck text-xs font-semibold mb-3">
-          <i class="fa-solid fa-file-contract"></i>
-          <span data-i18n="badge">Discord Developer Guidelines Compliant</span>
-        </div>
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight" data-i18n="title">
-          Felhasználási Feltételek (Terms of Service)
-        </h1>
-        <p class="text-slate-400 text-xs sm:text-sm mt-2" data-i18n="updated">
-          Hatálybalépés dátuma: 2026. március 1. • Verzió: 2.0
-        </p>
-      </div>
-
-      <div class="glass-card rounded-3xl p-6 sm:p-10 space-y-8 text-xs sm:text-sm leading-relaxed text-slate-300">
-        
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">1.</span>
-            <span data-i18n="s1.title">Feltételek Elfogadása</span>
-          </h2>
-          <p data-i18n="s1.desc">
-            A RubberDuck Bot szerveredhez adásával vagy bármely parancsának használatával elfogadod a jelen Felhasználási Feltételeket, valamint kötelező érvényűnek ismered el a Discord Hivatalos Felhasználási Feltételeit és Közösségi Irányelveit. Amennyiben ezekkel nem értesz egyet, kérjük, távolítsd el a botot a szerveredről.
-          </p>
-        </section>
-
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">2.</span>
-            <span data-i18n="s2.title">Rendeltetésszerű Használat és Korlátozások</span>
-          </h2>
-          <p data-i18n="s2.desc1">A botot kizárólag a rendeltetésének megfelelően, a közösségi élmény fokozására szabad használni. Kifejezetten tilos:</p>
-          <ul class="list-disc pl-5 space-y-1.5 text-slate-300">
-            <li data-i18n="s2.rule1">A bot parancsainak automatizált szkriptekkel, makrókkal történő spammelése vagy a szolgáltatás szándékos túlterhelése (Denial of Service kísérlet).</li>
-            <li data-i18n="s2.rule2">A bot szoftveres hibáinak (bug/exploit) rosszhiszemű kihasználása jogtalan coinok vagy szintek generálására.</li>
-            <li data-i18n="s2.rule3">A bot funkcióinak (pl. felhívások, emlékeztetők) felhasználása zaklatásra, illegális tevékenységek elősegítésére vagy gyűlöletkeltésre.</li>
-          </ul>
-        </section>
-
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">3.</span>
-            <span data-i18n="s3.title">Virtuális Gazdaság & Játékelemek</span>
-          </h2>
-          <div class="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-2">
-            <p data-i18n="s3.desc1">
-              A botban megszerezhető virtuális coinok, pontok, rangok és kitűzők kizárólag szórakoztató célt szolgáló virtuális adatok.
-            </p>
-            <p class="text-amber-300 font-semibold" data-i18n="s3.desc2">
-              ⚠️ A virtuális érmék valódi pénzbeli értékkel NEM rendelkeznek, semmilyen formában nem válthatók valódi pénzre, és tilos azok valódi pénzért történő értékesítése vagy azzal való kereskedés.
-            </p>
-          </div>
-        </section>
-
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">4.</span>
-            <span data-i18n="s4.title">Elérhetőség és Szolgáltatás Megszüntetése</span>
-          </h2>
-          <p data-i18n="s4.desc">
-            A botot „ahogy van” (as-is) és „ahogy elérhető” alapon biztosítjuk. Fenntartjuk a jogot a bot ideiglenes karbantartására, frissítésére, vagy a szabályokat megsértő szerverek és felhasználók hozzáférésének azonnali korlátozására.
-          </p>
-        </section>
-
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">5.</span>
-            <span data-i18n="s5.title">Felelősségkizárás (Disclaimer of Warranty)</span>
-          </h2>
-          <p data-i18n="s5.desc">
-            A fejlesztők nem vállalnak felelősséget harmadik féltől származó szolgáltatáskiesésekből (pl. Discord hálózati kimaradások), adatvesztésből vagy a felhasználók által generált tartalmakból eredő közvetlen vagy közvetett károkért.
-          </p>
-        </section>
-
-        <section class="space-y-2">
-          <h2 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
-            <span class="text-brand-duck">6.</span>
-            <span data-i18n="s6.title">Feltételek Módosítása</span>
-          </h2>
-          <p data-i18n="s6.desc">
-            Fenntartjuk a jogot a jelen feltételek időszakos módosítására a bot új funkcióinak megfelelően. A módosítások a jelen weboldalon való közzététellel lépnek hatályba.
-          </p>
-        </section>
-
-      </div>
-
-      <div class="mt-8 flex items-center justify-between text-xs text-slate-400 font-mono">
-        <a href="privacy.html" class="hover:text-brand-duck transition-colors">➔ Adatvédelmi Tájékoztató (Privacy)</a>
-        <a href="index.html" class="hover:text-brand-duck transition-colors">➔ Főoldal</a>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-500">
-    RubberDuck Bot • Hivatalos Jogi Dokumentáció • 2026
-  </footer>
-
-  <script>
-    const I18N = {
-      hu: {
-        "btn.invite": "Meghívás",
-        "back": "Vissza a főoldalra",
-        "badge": "Discord Developer Guidelines Compliant",
-        "title": "Felhasználási Feltételek (Terms of Service)",
-        "updated": "Hatálybalépés dátuma: 2026. március 1. • Verzió: 2.0",
-        "s1.title": "Feltételek Elfogadása",
-        "s1.desc": "A RubberDuck Bot szerveredhez adásával vagy bármely parancsának használatával elfogadod a jelen Felhasználási Feltételeket, valamint kötelező érvényűnek ismered el a Discord Hivatalos Felhasználási Feltételeit és Közösségi Irányelveit.",
-        "s2.title": "Rendeltetésszerű Használat és Korlátozások",
-        "s2.desc1": "A botot kizárólag a rendeltetésének megfelelően, a közösségi élmény fokozására szabad használni. Kifejezetten tilos:",
-        "s2.rule1": "A bot parancsainak automatizált szkriptekkel történő spammelése vagy túlterhelése.",
-        "s2.rule2": "A bot hibáinak (exploit) kihasználása jogtalan előnyökért.",
-        "s2.rule3": "A bot használata zaklatásra, illegális tevékenységek támogatására vagy gyűlöletkeltésre.",
-        "s3.title": "Virtuális Gazdaság & Játékelemek",
-        "s3.desc1": "A botban megszerezhető virtuális coinok, pontok és kitűzők kizárólag szórakoztató célt szolgálnak.",
-        "s3.desc2": "⚠️ A virtuális érmék valódi pénzbeli értékkel NEM rendelkeznek, és valódi fizetőeszközre nem válthatók.",
-        "s4.title": "Elérhetőség és Szolgáltatás Megszüntetése",
-        "s4.desc": "A botot 'ahogy van' alapon biztosítjuk. Fenntartjuk a jogot a szabályokat megsértő szerverek kizárására.",
-        "s5.title": "Felelősségkizárás (Disclaimer of Warranty)",
-        "s5.desc": "A fejlesztők nem felelősek a külső hálózati kimaradásokból vagy nem rendeltetésszerű használatból fakadó károkért.",
-        "s6.title": "Feltételek Módosítása",
-        "s6.desc": "Fenntartjuk a jogot a jelen szabályzat frissítésére a weboldalon keresztüli közzététellel."
-      },
-      en: {
-        "btn.invite": "Invite Bot",
-        "back": "Back to Home",
-        "badge": "Discord Developer Guidelines Compliant",
-        "title": "Terms of Service",
-        "updated": "Effective Date: March 1, 2026 • Version: 2.0",
-        "s1.title": "Acceptance of Terms",
-        "s1.desc": "By authorizing RubberDuck to your guild or invoking its slash commands, you agree to these Terms of Service and Discord's Terms of Service and Community Guidelines.",
-        "s2.title": "Acceptable Use & Restrictions",
-        "s2.desc1": "You agree to use RubberDuck solely for legitimate community engagement. Strictly forbidden:",
-        "s2.rule1": "Automating command execution or attempting denial of service attacks.",
-        "s2.rule2": "Exploiting system bugs or glitches for unauthorized progression.",
-        "s2.rule3": "Employing bot announcements or reminders for harassment or unlawful content.",
-        "s3.title": "Virtual Economy & Gameplay Elements",
-        "s3.desc1": "All in-game coins, ranks, and achievements are purely virtual assets intended solely for entertainment.",
-        "s3.desc2": "⚠️ Virtual currency holds ZERO real-world monetary value and cannot be redeemed for fiat currency.",
-        "s4.title": "Availability & Termination",
-        "s4.desc": "RubberDuck is delivered on an 'as-is' basis. We reserve the right to revoke bot access to any guild violating these terms.",
-        "s5.title": "Disclaimer of Warranty",
-        "s5.desc": "Developers cannot be held liable for third-party network outages or indirect damages.",
-        "s6.title": "Modifications",
-        "s6.desc": "We reserve the right to revise these terms as new features are introduced."
-      }
-    };
-
-    let currentLang = localStorage.getItem('rubberduck_lang') || 'hu';
-
-    function setLanguage(lang) {
-      currentLang = lang;
-      localStorage.setItem('rubberduck_lang', lang);
-      document.getElementById('langCurrentBadge').textContent = lang.toUpperCase();
-      const dict = I18N[lang] || I18N['hu'];
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) el.textContent = dict[key];
-      });
-    }
-
-    function toggleLanguage() {
-      setLanguage(currentLang === 'hu' ? 'en' : 'hu');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      setLanguage(currentLang);
-    });
-  </script>
+    <footer class="mt-12 pt-6 border-t border-white/10 text-xs text-slate-500">
+      &copy; 2026 RubberDuck Bot. Official Documentation.
+    </footer>
+  </div>
 </body>
 </html>
